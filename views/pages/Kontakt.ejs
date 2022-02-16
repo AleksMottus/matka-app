@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matkaklubi</title>
+    <title>Kontaktleht</title>
     <link rel="stylesheet" href="matkaklubi.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
@@ -15,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="paisSektsioon">
         <div class="container">
@@ -27,33 +25,28 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-7 menu ">
-                    <%- include("../partials/menyy.ejs") %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 paisSektsioon-pealkirjad">
-                    <div class="rida">
-                        <h2>Matkaklubi</h2>
-                        <img class="liblikas1" src="./assets/Butterflyrteine.png" alt="">
-                    </div>
-                    <div class="rida">
-                        <img class="liblikas2" src="./assets/Butterfly.png" alt="">
-                        <h1>Purde Matk</h1>    
-                    </div>
-                    <div class="rida">
-                        <h3>Iganädalane liikumine</h3>
-                    </div>
-                    <div >
-                     <a href="http://google.ee"><button type="button" class="nupp">Vaata matkasid</button></a>
-                    </div>
-                </div>
-                <div class="d-none d-lg-block col-lg-6 pealispilt">
-                    <img class="ummargunepilt" src="./assets/Image.png" alt="">
-                    <img class="vari" src="./assets/Shadow.png" alt="">
+                    <ul class="d-md-flex align-items-md-center justify-content-end">
+                        <li><a href="./Koduleht.html">ESILEHT</a></li>
+                        <li><a href="./Uudised.html">UUDISED</a></li>
+                        <li><a href="#">MATKARAJAD</a></li>
+                        <li><a href="./Kontakt.html">KONTAKT</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="sisend">
+            <form action="" method="get" id="koguvorm">
+            <label for="Nimi">Nimi: </label>
+            <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
+            <label for="Email">E-mail:</label>
+            <input  class="form-control" type="text" placeholder="E-mail" id="Email">
+            <label for="Teade">Teade: </label>
+            <input class="form-control" type="text" placeholder="Teade" id="Teade">
+            <button onclick="prindiInfo()" type="button" class="mt-3 btn btn-info ">Küsi</button>
+            </form>
+            <div class="valjund" id="valjund"></div>
+        </div>
     </div>
+    <script src="kontakt.js"></script>
 </body>
-
 </html>
