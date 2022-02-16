@@ -1,0 +1,133 @@
+.paisSektsioon {
+    width: 1440px;
+    background-image: url("./assets/Hills.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1100px;
+}
+.paislogo{
+    width: 67px;
+    height: 64px;
+
+}
+.paisnimi{
+    font-size: 33px;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 800;
+    color: #0B0B0B;
+    letter-spacing: 0px;
+    line-height: 33px;
+    max-height: 75px;
+    max-width: 200px;
+    
+}
+.menu {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 16.67px;
+    font-weight: bold;
+    letter-spacing: 2.67px;
+   width: 100%;
+   align-items: center;
+   
+   
+}
+.menu > ul > li > a{
+    color: hsl(0, 0%, 0%);
+    padding-right: 10px;
+   
+}
+.menu ul{
+    list-style-type: none;
+   margin: 0px ;
+   padding: 0px;
+   height: 100%;
+}
+.paisSektsioon-pealkirjad {
+    padding-top: 20px;
+}
+@media screen and (min-width: 992px) {
+    .paisSektsioon-pealkirjad{
+        padding-top: 231px;
+    }
+    
+}
+.paisSektsioon-pealkirjad h2,
+.paisSektsioon-pealkirjad h3, 
+.paisSektsioon-pealkirjad h1 {
+    font-weight: 700;
+    letter-spacing: 0px;
+    color: #0B0B0B;
+    text-transform: uppercase;
+}
+.paisSektsioon-pealkirjad h2{
+    font-size: 39.57px;
+    line-height: 48px;
+}
+.paisSektsioon-pealkirjad h3{
+    font-size: 20.83px;
+    line-height: 29.17px;
+
+} 
+.paisSektsioon-pealkirjad h1 {
+    font-size: 74.93px;
+    line-height: 91px;
+}
+.rida {
+    display: flex;
+    width: 100%;
+}
+.liblikas1{
+    margin-top: -30px;
+    width: 75px;
+    height: 66px;
+    margin-left: auto;
+}
+.liblikas2{
+    width: 60px;
+    height: 32px;
+    margin-left: -63px;  
+}
+.nupp{
+    width: 247px;
+    height: 58px;
+    color: #FFFFFF;
+    border-color: black;
+    background: #0B0B0B 0% 0% no-repeat padding-box;
+    margin-top: 25px;
+    font-size: 12.5px;
+    font-family: 'Montserrat', sans-serif; 
+    letter-spacing: 2.25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.pealispilt .ummargunepilt{
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+    padding-top: 30px;
+}
+.vari{
+    width: 1091px;
+    height: 89px;
+    margin-top: -40px;
+   margin-left: -152px;
+}
+@media screen and (minwidth: 1480px) {
+    .paiskonteiner{
+        background: transparent url(./assets/Hills.png) 50% 50% no-repeat padding-box;
+    }
+    
+}
+.sisend{
+    max-width: 30%;
+    padding-left: 10rem;
+    padding-top: 5rem;
+}
+.sisend label{
+    font-weight: 800;
+}
