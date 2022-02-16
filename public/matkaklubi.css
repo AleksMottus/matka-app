@@ -131,3 +131,9 @@
 .sisend label{
     font-weight: 800;
 }
+.output{
+    padding-top: 50px;
+}
+.naitauudist{
+    justify-content: space-around;
+}
