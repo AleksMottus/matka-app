@@ -4,7 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 1100px;
+    height: 100%;
 }
 .paislogo{
     width: 67px;
@@ -123,8 +123,7 @@
     }
     
 }
-.sisend{
-    max-width: 30%;
+.kontakdidesisend{
     padding-left: 10rem;
     padding-top: 5rem;
 }
@@ -145,4 +144,31 @@
 }
 .matkade-pildid1{
     max-height: 230px;
+}
+
+.kontaksisse{
+    max-width: 400px;
+    min-width: 300px;
+}
+.thankpic{
+    width: 80%;
+    height: 75%;
+    object-fit: cover;
+}
+.uudisblokk{
+    max-width: 45% !important;
+}
+.uudisepildid{
+    height: 300px;
+}
+.banner { 
+    float: right; 
+    width: 150px; 
+    height: 400px; 
+    margin-right: 50px;
+    margin-top: 150px;
+}
+.banner a img{
+    width: 100%;
+    height: 100%;
 }

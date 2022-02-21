@@ -19,16 +19,24 @@
             </div>
         </div>
         <div class="sisend">
-            <form action="" method="get" id="koguvorm">
-            <label for="Nimi">Nimi: </label>
-            <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
-            <label for="Email">E-mail:</label>
-            <input  class="form-control" type="text" placeholder="E-mail" id="Email">
-            <label for="Teade">Teade: </label>
-            <textarea class="form-control teated" name="Teade" id="Teade" cols="1" rows="5" placeholder="Teade"></textarea>
-            <button onclick="prindiInfo()" type="button" class="mt-3 btn btn-info ">Küsi</button>
-            </form>
-            <div class="valjund" id="valjund"></div>
+            <div class="row d-flex kontakdidesisend">
+                <div class="col-lg-5 col-md-12 ">
+                    <form action="" method="get" id="koguvorm">
+                    <label for="Nimi">Nimi: </label>
+                    <input class="form-control kontaksisse" type="text" placeholder="Nimi" id="Nimi">
+                    <label for="Email">E-mail:</label>
+                    <input  class="form-control kontaksisse" type="text" placeholder="E-mail" id="Email">
+                    <label for="Teade">Teade: </label>
+                    <textarea class="form-control teated kontaksisse" name="Teade" id="Teade" cols="1" rows="5" placeholder="Teade"></textarea>
+                    <button onclick="prindiInfo()" type="button" class="mt-3 btn btn-info ">Küsi</button>
+                    </form>
+                    <div class="valjund" id="valjund"></div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <h2>Aitäh ,et valisid meie matkaklubi!</h2>
+                    <img class="thankpic"src="./assets/thankyou.jfif" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <script src="kontakt.js"></script>
