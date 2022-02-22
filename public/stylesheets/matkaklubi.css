@@ -1,6 +1,6 @@
 .paisSektsioon {
     width: 1440px;
-    background-image: url("./assets/Hills.png");
+    background-image: url("/assets/Hills.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;

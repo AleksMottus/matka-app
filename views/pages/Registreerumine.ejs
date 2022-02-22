@@ -17,18 +17,15 @@
                 </div>
             </div>
         
-            <h1>Registreeru matkale <%= matk.MatkaNimetus %></h1>
+            <h1 class="pt-5">Registreeru matkale <%= matk.MatkaNimetus %></h1>
             <img class="registreerumine-pilt" src="<%= matk.pildiUrl %>" alt="">
             <p>
                 <%= matk.kirjeldus %>
             </p>
             <div class="sisend">
-                <form action="#">
-                    <div class="form-group">
-                        <label for="Nimi">Nimi: </label>
-                        <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
-                    </div>
-            
+                <form action="#">   
+                <label for="Nimi">Nimi: </label>
+                <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
                 <label for="Email">E-mail:</label>
                 <input  class="form-control" type="text" placeholder="E-mail" id="Email">
                 <label for="Teade">Teade: </label>
