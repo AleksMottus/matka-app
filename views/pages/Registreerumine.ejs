@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row pt-3">
                 <div class="col-12 col-md-5 d-flex">
-                    <img class="paislogo" src="./assets/klubilogo.png" alt="">
+                    <img class="paislogo" src="/assets/klubilogo.png" alt="">
                     <div class="paisnimi">
                         MATKA KLUBI
                     </div>
@@ -16,26 +16,26 @@
                     <%- include("../partials/menyy.ejs") %>
                 </div>
             </div>
-        </div>
-        <h1>Registreeru matkale <%= matk.MatkaNimetus %></h1>
-        <img class="registreerumine-pilt" src="<%= matk.PildiUrl %>" alt="">
-        <p>
-            <%= matk.Kirjeldus %>
-        </p>
-        <div class="sisend">
-            <form action="#">
-                <div class="form-group">
-                    <label for="Nimi">Nimi: </label>
-                    <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
-                </div>
         
-            <label for="Email">E-mail:</label>
-            <input  class="form-control" type="text" placeholder="E-mail" id="Email">
-            <label for="Teade">Teade: </label>
-            <textarea class="form-control teated" name="Teade" id="Teade" cols="1" rows="5" placeholder="Teade"></textarea>
-            <button onclick="prindiInfo()" type="button" class="mt-3 btn btn-info ">Küsi</button>
-            </form>
-            <div class="valjund" id="valjund"></div>
+            <h1>Registreeru matkale <%= matk.MatkaNimetus %></h1>
+            <img class="registreerumine-pilt" src="<%= matk.pildiUrl %>" alt="">
+            <p>
+                <%= matk.kirjeldus %>
+            </p>
+            <div class="sisend">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="Nimi">Nimi: </label>
+                        <input class="form-control" type="text" placeholder="Nimi" id="Nimi">
+                    </div>
+            
+                <label for="Email">E-mail:</label>
+                <input  class="form-control" type="text" placeholder="E-mail" id="Email">
+                <label for="Teade">Teade: </label>
+                <textarea class="form-control teated" name="Teade" id="Teade" cols="1" rows="5" placeholder="Teade"></textarea>
+                <button onclick="prindiInfo()" type="button" class="mt-3 btn btn-info ">Küsi</button>
+                </form>
+                <div class="valjund" id="valjund"></div>
         </div>
     </div>
     <script src="kontakt.js"></script>

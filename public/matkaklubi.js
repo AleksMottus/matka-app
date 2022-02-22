@@ -20,10 +20,11 @@ let uudised= [
     uudisetekst: "RMK külastuskorraldusosakonna juhataja Marge Rammo sõnul on eriolukorra väljakuulutamise hetkest kõik RMK külastuskeskused ja metsamajad külalistele suletud olnud. Seoses eriolukorra lõpuga avatakse Rammo sõnul 18. mail kõik RMK külastuskeskused. Suvekuudel puhkajate seas populaarsed metsamajad jäävad suletuks 1. juunini. Looduses seiklejatel soovitatakse oma retk põhjalikult läbi mõelda ja rahvarohkeid kohti vältida.",
     uudispilt: "./assets/Uudispilt3.jpg",
     },
+   
 ]
 function looUudis(uudis) {
     return `
-    <div class="col-6 card mr-1 mt-2 pt-1 uudisblokk">
+    <div class="col-lg-6 col-md-12 card  mt-2 pt-1 uudisblokk">
         <img class="card-img-top uudisepildid" src="${uudis.uudispilt}"
         <div class="card-body">
         <div class="card-title"><h2>${uudis.pealkiri}</h2>
