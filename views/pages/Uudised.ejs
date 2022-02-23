@@ -19,11 +19,28 @@
                     <%- include("../partials/menyy.ejs") %>
                 </div>
             </div>  
-       
+            <div class="row">
+                <% for (let i=0; i < uudised.length; i++) { %>
+                <div class="col-md-6 col-sm-12 card">
+                    <img class="card-img-top" src="<%= uudised[i].uudispilt %>">
+                    <div class="card-body">
+                        <h4 class="card-title"><%= uudised[i].pealkiri %></h4>
+                        <p>
+                            <%= uudised[i].kokkuvõte %>                        
+                        </p>
+                        <p>
+                        <%= uudised[i].uudisetekst %>
+                        </p>
+                        <a href="#" class="btn btn-primary">Vaata lähemalt</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
             <div class="output" id="valjund"></div>
         </div>
+
         </div>
     </div>
-<script src="matkaklubi.js"></script>
+
 </body>
 </html>
