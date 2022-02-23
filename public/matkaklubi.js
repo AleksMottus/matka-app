@@ -38,6 +38,7 @@ function looUudis(uudis) {
             </div>
             </div>
         </div>
+    <div><button type="button" class="btn btn-primary mb-3">Vaata lähemalt</button></div>
     </div>
     `
 }

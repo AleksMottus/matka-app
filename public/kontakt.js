@@ -7,6 +7,7 @@ function prindiInfo(){
     console.log(nimeTekst)
     console.log(emailTekst)
     console.log(teadeTekst)
-    let sisendid = document.querySelectorAll("input");
+    let sisendid = document.querySelectorAll("input","textarea");
     sisendid.forEach((input) => (input.value = ""));
+    sisendid.forEach((textarea) => (textarea.value = ""));
 }
