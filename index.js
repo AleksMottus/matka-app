@@ -7,21 +7,21 @@ let uudised= [
   pealkiri: "Nädalavahetusel toimub kümneid matku Eesti põlisloodusesse",
   kokkuvõte: "Järgmisel nädalal tähistatakse rahvusvahelist põlislooduse nädalat, millega kogu maailmas teadvustatakse puutumatu looduse kaitsmise olulisust - Eestis korraldatakse loodusturismi ühingu eestvedamisel sel puhul kümneid põnevaid loodusretki radadele, kuhu iga päev ei satu.",
   uudisetekst: "Kohalike giidide juhtimisel saab matkata soodes, rabades ja metsades, sõita jõgedel, külastada saari ja tutvuda mererannikuga. Matkad toimuvad üle Eesti kõigis meie rahvusparkides ning paljudel looduskaitsealadel. Eesti põlisemateks loodusmaastikeks on sood, mille kujunemine algas kohe pärast jääaja lõppu. Sood ja rabad on koduks Eesti looduse sümbolliikidele nagu hundid, ilvesed, karud ja kotkad. Nemad oskavad eriti lugu pidada privaatsusest, mida soomaastik pakub. ",
-  uudispilt: "./assets/Uudispilt1.jpg",
+  uudispilt: "/assets/Uudispilt1.jpg",
   },
   {
   id: 1,
   pealkiri: "Kuidas me matkakaaslast päästsime ja kivide salakavaluse paljastasime",
   kokkuvõte: "Kas Alpides kivilaviinil ronimine ja järsaku kohal kõõlumine on äge või õudne? Miks kivisid ei tasu usaldada? Loe ise, saad teada.",
   uudisetekst: "Kivilaviin oli tee ära viinud ja julgestustrossid puruks tõmmanud. Istusime kaminakuumas mägimajakeses ja kuulasime hollandlasest matkaselli seiklusi. «Nojah, sa pead seal ikka ronima,» teatas ta kukalt sügades, palavast toast hoolimata suusamüts ikka veel peas. Paduvihm läks akna taga üle lumetormiks. Matkavend rääkis valju häälega, justkui pajataks uhket sõjalugu. «Ronima pead – ikka käte ja jalgadega. See on kohutavalt järsk. Kogu aeg! Ja seal üleval on kohutav tuul. Brr... Ma ütleks, et see on tehtav, aga vaevalt ma seda uuesti teeksin.» Mina kuulasin ja tundsin, kuidas ninaots koos entusiasmikraadidega tasapisi langeb. Aga matkakaaslasele kõrval mõjusid ritta sätitud ohud nagu visatud kindad. Hei-hoo, tema läks hasardist põlema ja tahtis seda kõike omal nahal kogeda veel rohkem kui enne!",
-  uudispilt: "./assets/Uudispilt2.jpg",
+  uudispilt: "/assets/Uudispilt2.jpg",
   },
   {
   id: 2,
   pealkiri: "RMK metsamajad ja külastuskeskused on külalistele peatselt avatud",
   kokkuvõte: "Suvekuudel populaarsed Riigimetsa Majandamise Keskuse külastuskeskused ja metsamajad avatakse peagi.",
   uudisetekst: "RMK külastuskorraldusosakonna juhataja Marge Rammo sõnul on eriolukorra väljakuulutamise hetkest kõik RMK külastuskeskused ja metsamajad külalistele suletud olnud. Seoses eriolukorra lõpuga avatakse Rammo sõnul 18. mail kõik RMK külastuskeskused. Suvekuudel puhkajate seas populaarsed metsamajad jäävad suletuks 1. juunini. Looduses seiklejatel soovitatakse oma retk põhjalikult läbi mõelda ja rahvarohkeid kohti vältida.",
-  uudispilt: "./assets/Uudispilt3.jpg",
+  uudispilt: "/assets/Uudispilt3.jpg",
   },
  
 ]
@@ -42,7 +42,7 @@ const matk2 = {
   osalejad: ['alpi@matkaja.ee']
 }
 const matk3 ={
-    id: 3,
+    id: 2,
     nimetus: "Suusamatk Soomes",
     kirjeldus: "Suusamatk Lapimaa tundra polaaröös virmaliste valgel eesmärgiga jõuda Soome kõrgeima mäe Halti tippu. Peale matka veedame kaks päeva suuskeskuses mäesuusa ja lumelaua sõitu nautides. Uut aastat tervitame Lapimaal. Päevateekonnad on mõõdukad ning ei eelda supervormi.",
     pildiUrl: "/assets/Lume-laua-matk.jpg",  
@@ -54,12 +54,47 @@ const matkad = [
   matk3,
 ]
 
+let matkajad = []
 
 function naitaRegistreerimist(req, res) {
   const index = parseInt(req.params.matk)
   console.log("valitud matk " + index)
   console.log(matkad[index])
   res.render('pages/Registreerumine', {matk: matkad[index]})
+}
+
+function registreeriOsaleja(req, res) {
+  console.log("Serverisse saadeti parameetrid:")
+  console.log(req.query)
+
+  if (!req.query.nimi) {
+    return res.end("Matkaja nimi peab olemas olema")
+  }
+
+  if (!req.query.matkaId) {
+    return res.end("Matka identifikaator puudub")
+  }
+
+  const matk = matkad[req.query.matkaId]
+
+  if (!matk) {
+    return res.send("Matka indeks on vale")
+  }
+
+  const uusMatakaja = {
+    nimi : req.query.nimi,
+    email : req.query.email,
+    teade : req.query.Teade,
+    id : req.query.matkaId,
+    matkNimetus: matk.nimetus,
+  }
+
+  matkajad.push(uusMatakaja)
+  matk.osalejad.push(uusMatakaja.email)
+
+  console.log("kõik matkajad:")
+  console.log(matkajad)
+  res.send("Registreeritud!")
 }
 
 express()
@@ -70,5 +105,6 @@ express()
   .get('/Uudised', (req, res) => res.render('pages/Uudised', {uudised}))
   .get('/Kontakt', (req, res) => res.render('pages/Kontakt'))
   .get('/Registreerumine/:matk', naitaRegistreerimist)
+  .get('/kinnitus',registreeriOsaleja)
   .get('/Uudised', (req, res) => res.render('pages/Uudised'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
