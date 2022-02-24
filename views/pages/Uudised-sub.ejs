@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ("../partials/paiselement.ejs") %>
+    <title>Uudised</title>
+   
+    
+<body>
+    <div class="paisSektsioon">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-12 col-md-5 d-flex">
+                    <img class="paislogo" src="/assets/klubilogo.png" alt="">
+                    <div class="paisnimi">
+                        MATKA KLUBI
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 menu ">
+                    <%- include("../partials/menyy.ejs") %>
+                </div>
+            </div>  
+        </div>
+        <div class="Uudis-sub-sisu mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="uudisesisu">
+                        <h1 class="uudisepealkiri"><%= uudis.pealkiri %></h1>
+                        <p>
+                            <%= uudis.kokkuvõte %>                        
+                        </p>
+                        <p>
+                        <%= uudis.uudisetekst %>
+                        </p>
+                    </div>
+                    <img class="uudisepildid" src="<%= uudis.uudispilt %>">
+                    <div class="uudisesisu">
+                        <p>
+                           <%= uudis.suureuudisetekst %>
+                        </p>
+                    </div>
+                    <img class="uudisepildid2 mb-3" src="<%= uudis.suureuudisepilt %>">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

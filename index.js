@@ -1,13 +1,16 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-let uudised= [ 
+
+const uudised= [ 
   {
   id: 0,
   pealkiri: "Nädalavahetusel toimub kümneid matku Eesti põlisloodusesse",
   kokkuvõte: "Järgmisel nädalal tähistatakse rahvusvahelist põlislooduse nädalat, millega kogu maailmas teadvustatakse puutumatu looduse kaitsmise olulisust - Eestis korraldatakse loodusturismi ühingu eestvedamisel sel puhul kümneid põnevaid loodusretki radadele, kuhu iga päev ei satu.",
   uudisetekst: "Kohalike giidide juhtimisel saab matkata soodes, rabades ja metsades, sõita jõgedel, külastada saari ja tutvuda mererannikuga. Matkad toimuvad üle Eesti kõigis meie rahvusparkides ning paljudel looduskaitsealadel. Eesti põlisemateks loodusmaastikeks on sood, mille kujunemine algas kohe pärast jääaja lõppu. Sood ja rabad on koduks Eesti looduse sümbolliikidele nagu hundid, ilvesed, karud ja kotkad. Nemad oskavad eriti lugu pidada privaatsusest, mida soomaastik pakub. ",
   uudispilt: "/assets/Uudispilt1.jpg",
+  suureuudisepilt:"/assets/Suureuudisepilt1.jpg",
+  suureuudisetekst: "Kel huvi huntide vastu, sel tasuks minna matkale Laukesoosse, kus huntide eluolust räägitakse. Erineva pikkusega rabamatkadele oodatakse huvilisi Raplamaa soodesse Palasil, Jalasel, Linnurabas, Loosalus, Luitemaale, samuti Emajõe-Suursoos, Meenikunnos, Nigulas, Ohepalus,  Soomaa rahvuspargis ja Nätsi-Võlla rabas. Merd ja rannikut saab uurida hülgevaatlusretkel Malusi saarestikus, jalgsimatkal Vormsi  saarel, Osmussaarel, Saaremaal Harilaiul või Odalätsis, Lahemaal Pedassaare poolsaarel ja Juminda poolsaarel. Eesti käänulised jõed erinevad vägagi sellest, mida võib näha Lääne-Euroopas, kus jõed on kaevatud kanaliteks ja kammitsetud paisudega. Eesti jõed voolavad enamuses oma looduslikes sängides ning on elupaigaks paljudele liikidele. Keda tõmbab rohkem vee poole, saab matkata jalgsi Valgejõe ürgorus või avastada jõgesid kanuudel Emajõe-Suursoos, Soomaal ja mitmel pool mujal üle Eesti. Põlismetsadesse viivad retked Lahemaa rahvuspargis, Karula rahvuspargis ja Toolse maastikukaitsealal. Põlislooduse nädala lõpetavad matkad Hiiumaa liivikutel ja luidetel ning teemaõhtu «Põnev Põder» Matsalu rahvuspargis. Kõikidele üritustele on vajalik eelregistreerimine.",
   },
   {
   id: 1,
@@ -15,6 +18,8 @@ let uudised= [
   kokkuvõte: "Kas Alpides kivilaviinil ronimine ja järsaku kohal kõõlumine on äge või õudne? Miks kivisid ei tasu usaldada? Loe ise, saad teada.",
   uudisetekst: "Kivilaviin oli tee ära viinud ja julgestustrossid puruks tõmmanud. Istusime kaminakuumas mägimajakeses ja kuulasime hollandlasest matkaselli seiklusi. «Nojah, sa pead seal ikka ronima,» teatas ta kukalt sügades, palavast toast hoolimata suusamüts ikka veel peas. Paduvihm läks akna taga üle lumetormiks. Matkavend rääkis valju häälega, justkui pajataks uhket sõjalugu. «Ronima pead – ikka käte ja jalgadega. See on kohutavalt järsk. Kogu aeg! Ja seal üleval on kohutav tuul. Brr... Ma ütleks, et see on tehtav, aga vaevalt ma seda uuesti teeksin.» Mina kuulasin ja tundsin, kuidas ninaots koos entusiasmikraadidega tasapisi langeb. Aga matkakaaslasele kõrval mõjusid ritta sätitud ohud nagu visatud kindad. Hei-hoo, tema läks hasardist põlema ja tahtis seda kõike omal nahal kogeda veel rohkem kui enne!",
   uudispilt: "/assets/Uudispilt2.jpg",
+  suureuudisepilt:"/assets/Suureuudisepilt2.jpg",
+  suureuudisetekst: "Kui hull see olla saab? Kuulanud ära kommentaarid otse rajalt, valdasid meid vastakad tunded. «Äkki see ikka ei ole läbitav...» «Aga äkki on?» Seiklusjanu jäi loomulikult peale. Rajaraamat ütles ka, et ees ootab teekonna kõige raskem ja ohtlikum lõik. Aga kui hull see ikka saab olla? Viimatine päev oli kulgenud paksus paduvihmas, kõik võrratud vaated uduvatiga kaetud ja ainsaks vaatamisväärsuseks teele paarituma tulnud salamandrid. Ligased, tumedad ja graatsilised elukad  nägime kokku kolmekümmet! Samal ajal oli talla all pidevalt põrgulibe pori ja vett valati nagu ämbrist vihmarõivastele. Aga see on matkal täiesti normaalne. Mägedes lihtsalt saab kõiki aastaaegu koos ja talvest suvekuumusse võib tõusta-laskuda vaid mõne tunniga. Ja olgugi et õhtul paistis, et lumetorm ei lahku siit Bonn-Matreieri hüti ümbert iial, tervitas meid uuel hommikul imeline klaar päikesetõus. Jalgade all oli aga jää  kõik, mis öösel alla sadas, oli kividele kunstipärasteks kristallideks külmunud. Teekond Badeneri poole algas sellegipoolest reipal sammul. Midagi kraesse ei saja, seegi juba põhjus rõõmustada. Kivikülvid vaheldumisi lumeväljadega, millel kirendas värske jääkoorik, viltused päikesekiired kogu seda sinimustvalget silmailu kuldamas. Aga need väljad olid libedad. Kui sageli saab üle järsu kalde all lumevälja kõndida ka lihtsalt saabastega samme lumme pekstes, siis sel korral oli see jää tugevam. Lihtsalt samm ei pidanud.",
   },
   {
   id: 2,
@@ -22,6 +27,8 @@ let uudised= [
   kokkuvõte: "Suvekuudel populaarsed Riigimetsa Majandamise Keskuse külastuskeskused ja metsamajad avatakse peagi.",
   uudisetekst: "RMK külastuskorraldusosakonna juhataja Marge Rammo sõnul on eriolukorra väljakuulutamise hetkest kõik RMK külastuskeskused ja metsamajad külalistele suletud olnud. Seoses eriolukorra lõpuga avatakse Rammo sõnul 18. mail kõik RMK külastuskeskused. Suvekuudel puhkajate seas populaarsed metsamajad jäävad suletuks 1. juunini. Looduses seiklejatel soovitatakse oma retk põhjalikult läbi mõelda ja rahvarohkeid kohti vältida.",
   uudispilt: "/assets/Uudispilt3.jpg",
+  suureuudisepilt:"/assets/Suureuudisepilt3.jpg",
+  suureuudisetekst: "Mis vahe on külastuskeskusel ja loodusmajal? Külastuskeskus on aastaringselt avatud RMK puhkeala keskus, kus toimub loodushariduslik tegevus erinevatele sihtrühmadele – programmid, üritused, teavitamistöö. Külastuskeskuses on teabepunkt, ekspositsioon, teabekogu ning kontoriruumid töötajatele. Külastuskeskus on aastaringselt avatud. Loodusmaja, kus toimub samuti loodushariduslik tegevus, on aga avatud vaid programmide ja ürituste toimumise ajal. Mis vahe on metsamajal ja metsaonnil? Nii metsamajad kui metsaonnid on lihtsa konstruktsiooniga, reeglina ühe ruumi ja spartaliku sisustusega ööbimiskohad looduses liikujale. Metsamaja eristab metsaonnist privaatsus, mida pakub metsamaja kasutamise eest makstav võtmeraha. Metsaonn ei pruugi tagada kasutajale omaette olekut, sest ruumi tuleb teha kõigile, kes soovivad metsaonni kasutada. Seetõttu puudub metsaonnil ka kasutusmaks ehk võtmeraha. Metsamaja saab ja tuleb kasutamiseks ette broneerida, metsaonni puhul seda võimalust pole.",
   },
  
 ]
@@ -56,6 +63,12 @@ const matkad = [
 
 let matkajad = []
 
+function naitaUudist(req, res) {
+  const index = parseInt(req.params.uudis)
+  console.log("valitud uudis " + index)
+  console.log(uudised[index])
+  res.render('pages/Uudised-sub', {uudis: uudised[index]})
+}
 function naitaRegistreerimist(req, res) {
   const index = parseInt(req.params.matk)
   console.log("valitud matk " + index)
@@ -94,7 +107,7 @@ function registreeriOsaleja(req, res) {
 
   console.log("kõik matkajad:")
   console.log(matkajad)
-  res.send("Registreeritud!")
+  res.send("Registreeritud")
 }
 
 express()
@@ -103,8 +116,8 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index', {matkad: matkad}))
   .get('/Uudised', (req, res) => res.render('pages/Uudised', {uudised}))
+  .get('/Uudised-sub/:uudis',naitaUudist)
   .get('/Kontakt', (req, res) => res.render('pages/Kontakt'))
   .get('/Registreerumine/:matk', naitaRegistreerimist)
   .get('/kinnitus',registreeriOsaleja)
-  .get('/Uudised', (req, res) => res.render('pages/Uudised'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
