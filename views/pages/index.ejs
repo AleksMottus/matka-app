@@ -31,7 +31,7 @@
                         <h3>Iganädalane liikumine</h3>
                     </div>
                     <div >
-                     <a href="http://google.ee"><button type="button" class="nupp">Vaata matkasid</button></a>
+                     <a href=""><button type="button" class="nupp" >Vaata matkasid</button></a>
                     </div>
                 </div>
                 <div class="d-none d-lg-block col-lg-6 pealispilt">
@@ -54,12 +54,12 @@
                     <p>
                         Osalejaid: <%= matkad[i].osalejad.length %>
                     </p>
-                    <a href="" class="btn btn-primary">Registreeru</a>
+                    <a href="/registreerumine/<%= matkad[i].id %>" class="btn btn-primary">Registreeru</a>
                 </div>
             </div>
             <% } %>
         </div>
-    </div>
+    </div >
 </body>
 
 </html>
