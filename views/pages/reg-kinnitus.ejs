@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Registreerumise kinnitus</title>
+<%- include ("../partials/paiselement.ejs") %>
+
+    <body>
+        <div class="paisSektsioon">
+            <div class="container">
+                <div class="row pt-3">
+                    <div class="col-12 col-md-5 d-flex">
+                        <img class="paislogo" src="/assets/klubilogo.png" alt="">
+                        <div class="paisnimi">
+                            MATKA KLUBI
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7 menu ">
+                        <%- include("../partials/menyy.ejs") %>
+                    </div>
+                </div>
+
+                <h1 class="pt-5">
+                    Registreerumine matkale: <%= matk.nimetus %> õnnestus
+                </h1>
+                <img class="registreerumine-pilt" src="<%= matk.pildiUrl %>" alt="">
+                <p>
+                    <%= matk.kirjeldus %>
+                </p>
+                <div>
+                    <div>
+                        Aitäh ,et valisite meie matkaklubi
+                    </div>
+                    <a href="/" class="btn btn-primary">Tagasi esilehele</a>
+                </div>
+    </body>
+
+</html>
