@@ -38,7 +38,7 @@ const matk1 = {
   nimetus: "Matk Gruusias",
   kirjeldus: "Svaneetia asub Gruusia äärealal, vastu Venemaa ja mässulise Abhaasia piire. Svaneetia on piiratud igast küljest kõrgete mäeahelikega, sh põhjast Kaukasuse peaahelikuga. Tänu soodsale looduslikule asukohale on piirkonnast kujunenud Gruusia mägiturismi peamine keskus, mis on mägimatkajate seas populaarne nii suvel kui talvel. Mestiast on saanud moodsa arhitektuuriga linnake, kus turismile suunatud teenused on laialdaselt saadavalt. Sellest hoolimata kohtad siinsetel tänavatel iga õhtu karjamaadelt koju naasvaid lehmi. Teised külad, kuhu reisi jooksul satume, on oluliselt algupärasemad. Elu kulgeb siin vanasoodu, nii nagu ta siin sajandeid toiminud on.",
   pildiUrl: "/assets/Matk-gruusia.jpg",
-  osalejad: ['mati@matkaja.ee', 'kati@matkaja.ee', 'klaabu@suurmeri.ee']
+  osalejad: []
 }
 
 const matk2 = {
@@ -46,7 +46,7 @@ const matk2 = {
   nimetus: "Matk Alpides",
   kirjeldus: "Üldised plaanid: Umbes 5-6 päeva matkame Bergamo Alpide piirkonnas.Minek-tulek otselennuga (Tallinn-Milaano/Bergamo-Tallinn) ning kohapeal seikleme kohaliku transpordi ja/või rendimasinaga ja mägedes jalgsi matkates. Ilm Bergamo Alpides augusti teises poolesStatistika järgi jäävad päevased temperatuurid olenevalt kõrgusest, ilmaolust, otsesest päikesekiirgusest jms peamiselt vahemikku +17°C…+28°C ning öösiti +10°C…+17°C (ca 900m peal). Kõrgemal on jahedam. Sademeid ja/või äikest võib esineda keskmiselt umbes kuni 10 päeval terve augusti kuu kohta.",
   pildiUrl: "/assets/Matkapilt.jfif",
-  osalejad: ['alpi@matkaja.ee']
+  osalejad: []
 }
 const matk3 ={
     id: 2,
@@ -124,6 +124,7 @@ function tagastaOsalejad(req, res){
   }
   res.send(vastusMassiiv)
 }
+
 
 //let response = await fetch('/api/matkaja/' + matkaIndeks)
 express()
