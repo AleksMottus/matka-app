@@ -1,5 +1,5 @@
 const express = require('express')
-const { MongoClient } = require('mongodb')
+const { MongoClient, ObjectId } = require('mongodb')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
@@ -130,28 +130,56 @@ function tagastaMatkad(req, res){
 }
 async function tagastaOsalejad(req, res){
   let matkaIndeks = req.params.matk
-  await client.connect()
-  const database = client.db(andmebaas)
-  const registreerumised = database.collection("registreerumised")
-  
+
   const filter = {id:matkaIndeks}
-  let vastusMassiiv = await registreerumised.find(filter).toArray()
+  let vastusMassiiv = await loeOsalejad(filter)
   client.close()
 
   res.send(vastusMassiiv)
 }
 
+async function loeOsalejad(filter){
+  await client.connect()
+  const database = client.db(andmebaas)
+  const registreerumised = database.collection("registreerumised")
+  let vastusMassiiv = await registreerumised.find(filter).toArray()
+  client.close()
+  return vastusMassiiv
+}
+
+async function naitaMatkasid(req, res){
+  const osalejad = await loeOsalejad({})
+
+  for (indeks in osalejad) {
+    const osaleja = osalejad[indeks]
+    const matkaIndeks = parseInt(osaleja.id)
+    const matk = matkad[matkaIndeks]
+    matk.osalejad.push(osaleja.email)
+  }
+
+  console.log (osalejad)
+  res.render('pages/index', {matkad: matkad})
+}
+async function eemaldaOsaleja(req, res){
+  const id = req.params.id
+  await client.connect()
+  const database = client.db(andmebaas)
+  const registreerumised = database.collection("registreerumised")
+  const result = await registreerumised.deleteOne( {"_id": ObjectId(id)})
+  res.send({"staatus": "ok", detailid: result})
+}
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index', {matkad: matkad}))
+  .get('/', naitaMatkasid)
   .get('/Uudised', (req, res) => res.render('pages/Uudised', {uudised}))
   .get('/Uudised-sub/:uudis',naitaUudist)
   .get('/Kontakt', (req, res) => res.render('pages/Kontakt'))
   .get('/Registreerumine/:matk', naitaRegistreerimist)
   .get('/kinnitus',registreeriOsaleja)
   .get('/api/matk', tagastaMatkad)
+  .delete('/api/osaleja/:id', eemaldaOsaleja)
   .get('/api/matkaja/:matk', tagastaOsalejad)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
